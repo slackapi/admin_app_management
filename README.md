@@ -7,8 +7,8 @@ The application is written in TypeScript. The approval logic should be built in 
 
 There are 3 entry points into the application if you use all the available features.
 
-1. Listening for requests from Slack. These will be send from the Slack platform as events. They will be processed through Bolt which will take care of verifying the requests. By default this process is running on port 4000 and will need to be publicly accessible.
-2. The OAuth helper. This would likely only be used once when you are installing your application to a Slack organization. If you do not want to build an OAuth flow or make the calls manually then this can be used. By default this process is running on port 5000 and will need to publicly accessible.
+1. Listening for requests from Slack. These will be sent from the Slack platform as events. They will be processed through Bolt which will take care of verifying the requests. By default this process is running on port 4000 and will need to be publicly accessible.
+2. The OAuth helper. This would likely only be used once when you are installing your application to a Slack organization. If you do not want to build an OAuth flow or make the calls manually then this can be used. By default this process is running on port 5000 and will need to be publicly accessible.
 3. App APIs. These APIs are designed to make it simple to plug approval logic into existing business systems. There is sensitive data potentially exposed via these APIs so they should never be publicly accessible (If you did want to make these public then you would need to handle the auth). By default this process is running on port 3000 and should never be publicly accessible.
 ## Authentication
 
