@@ -1,11 +1,10 @@
-import { domainToASCII } from "url";
-
+//Teams represent Slack teams within an organization. For example there could be a Global, IT, and Finance team all under one company.
 export interface Team {
     team_name?: string;
     team_id: string;
     _id?: string;
 }
-
+//Apps are installed against a specific team. For one app to be used accross an entire organization it will need to be approved and installed on each specific team.
 export interface App {
     app_id: string,
     app_name?: string,
@@ -23,7 +22,7 @@ export interface App {
     teams_restricted?: string[],
     _id?: string,
 }
-
+//Scopes are how Slack grants permission to apps. Each app must request a specific set of scopes during installation. 
 export interface Scope {
     scope_name: string,
     description?: string,
@@ -34,11 +33,11 @@ export interface Scope {
     teams_restricted?: string[],
     _id?: string,
 }
-
+//When an end user wants to install an app on a team that has not yet been approved they will create a request and send it to thee DB. This will containt the information needed to make a decision on whether to allow the app to be installed or not. 
 export interface Request {
     app_id?: string,
     request_id: string,
-    previous_resolution?: any,//ingest object containing a bunch of data
+    previous_resolution?: any,
     user_id?: string,
     user_name?: string,
     user_email?: string,
@@ -48,7 +47,7 @@ export interface Request {
     approval_status?: String,
     _id?: string
 }
-
+//Below are the types for the request coming from directly from Slack. See Request above for what is stored in the DB. 
 export interface SlackRequest {
     type: string,
     app_request: SlackAppRequest
