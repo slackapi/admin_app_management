@@ -1,5 +1,5 @@
-//only checks required values.
-const { check } = require('express-validator');
+//For incomming API calls (not from Slack) this file is used to validate inpput. It will return errors if the validation fails. It only checks required values. 
+import { check } from 'express-validator';
 
 exports.addTeam = [
     check('team_name').isLength({ min: 1 }),
