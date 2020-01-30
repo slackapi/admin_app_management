@@ -25,12 +25,12 @@ interface AdminAppsRequestsListResult extends WebAPICallResult {
 }
 
 // get all outstanding requests from a team
-export let pullRequests = async (team: string) => {
+export let pullRequests = async (team_id: string) => {
     try {
         // Call the admin.apps.requests.list
         const result = await boltApp.client.apiCall("admin.apps.requests.list", {
             token: uToken,
-            team_id: team,
+            team_id,
             limit: 1000
         }) as AdminAppsRequestsListResult;
         result.app_requests.forEach(async (request) => {
@@ -43,12 +43,12 @@ export let pullRequests = async (team: string) => {
     }
 }
 
-export let approveRequest = async (team: string, request_id: string) => {
+export let approveRequest = async (team_id: string, request_id: string) => {
     try {
         // Call the admin.apps.requests.list
         const result = await boltApp.client.apiCall("admin.apps.approve", {
             token: uToken,
-            team_id: team,
+            team_id,
             limit: 1000,
             request_id
         });
@@ -58,12 +58,12 @@ export let approveRequest = async (team: string, request_id: string) => {
     }
 }
 
-export let rejectRequest = async (team: string, request_id: string) => {
+export let rejectRequest = async (team_id: string, request_id: string) => {
     try {
         // Call the admin.apps.requests.list
         const result = await boltApp.client.apiCall("admin.apps.restrict", {
             token: uToken,
-            team_id: team,
+            team_id,
             limit: 1000,
             request_id
         });
@@ -73,12 +73,12 @@ export let rejectRequest = async (team: string, request_id: string) => {
     }
 }
 
-export let approveApp = async (team: string, app_id: string) => {
+export let approveApp = async (team_id: string, app_id: string) => {
     try {
         // Call the admin.apps.requests.list
         const result = await boltApp.client.apiCall("admin.apps.approve", {
             token: uToken,
-            team_id: team,
+            team_id,
             limit: 1000,
             app_id
         });
@@ -88,12 +88,12 @@ export let approveApp = async (team: string, app_id: string) => {
     }
 }
 
-export let restrictApp = async (team: string, app_id: string) => {
+export let restrictApp = async (team_id: string, app_id: string) => {
     try {
         // Call the admin.apps.requests.list
         const result = await boltApp.client.apiCall("admin.apps.restrict", {
             token: uToken,
-            team_id: team,
+            team_id,
             limit: 1000,
             app_id
         });
