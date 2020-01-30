@@ -1,7 +1,7 @@
 import express = require('express');
 import bodyParser = require('body-parser');
 
-require('dotenv').config()
+require('dotenv').config();
 
 const authApp: express.Application = express();
 authApp.use(bodyParser.json());
@@ -17,9 +17,9 @@ authApp.use(function (error: Error, req: any, res: any, next: any) {
 const port = 5000
 
 authApp.get('/redirect/oauth', function (req, res) {
-    const client_id = process.env.SLACK_CLIENT_ID
-    const client_secret = process.env.SLACK_CLIENT_SECRET
-    const code = req.param("code");
+    const client_id = process.env.SLACK_CLIENT_ID;
+    const client_secret = process.env.SLACK_CLIENT_SECRET;
+    const code = req.params["code"];
     const url = `https://slack.com/api/oauth.v2.access?code=${code}&client_id=${client_id}&client_secret=${client_secret}`
     res.redirect(url);
 });
