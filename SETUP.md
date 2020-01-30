@@ -1,10 +1,10 @@
-Pre-reqs:
+## Pre-reqs
 - Node JS
 - MongoDB
 - A reverse proxy/tunnel service, such as `ngrok`
 - (optional) a GUI to view MongoDB records
 
-Steps to get set up
+## Steps
 - Clone repo to your laptop or server
 - Create a new Slack application at https://api.slack.com/apps
   - Add scopes: `admin.apps:read` & `admin.apps:write`
