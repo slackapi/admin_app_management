@@ -1,8 +1,12 @@
 import { App } from '@slack/bolt';
 import { WebAPICallResult } from '@slack/web-api';
 import { newRequest } from '../approvalLogic';
-const uToken = "";//replace with the Slack access token
-const signSecret = ""; //replace with the Slack signing secret
+
+require('dotenv').config();
+
+const uToken = process.env.SLACK_USER_TOKEN
+const signSecret = process.env.SLACK_SIGNING_SECRET
+
 //Allows Bolt to be used with only a user token and not a bot token
 const authorizeFn = async () => {
     return {

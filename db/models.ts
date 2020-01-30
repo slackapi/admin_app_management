@@ -4,7 +4,10 @@ import { Team } from '../types';
 import { App } from '../types';
 import { Scope } from '../types';
 import { Request } from '../types';
-const uri: string = "";//replace with your uri
+
+require('dotenv').config();
+
+const uri: string = process.env.MONGO_URI || "";
 
 mongoose.connect(uri, { useNewUrlParser: true }, (err: any) => {
     if (err) {
