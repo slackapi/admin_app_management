@@ -6,7 +6,6 @@ import { addApp, removeApp, getApps } from './objects/apps'
 import { addScope, removeScope, getScopes } from './objects/scopes'
 import { addRequest, removeRequest, manuallyApproveRequest, getRequests, manuallyRejectRequest, pullRequestsFromSlack } from './objects/requests'
 require('./bolt/boltApp');
-require('./auth')
 
 const app: express.Application = express();
 app.use(bodyParser.json());

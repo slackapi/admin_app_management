@@ -14,11 +14,12 @@
   "dependencies": {
     "@slack/bolt": "^1.2.0",
     "@types/express": "^4.17.0",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-validator": "^6.1.1",
     "mongoose": "^5.6.9",
-    "ts-node": "^8.3.0",
-    "typescript": "^3.5.3"
+    "ts-node": "^8.6.2",
+    "typescript": "^3.7.5"
   },
   "devDependencies": {
     "@types/mongodb": "^3.1.32",
