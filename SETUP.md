@@ -14,7 +14,7 @@
       SLACK_SIGNING_SECRET=Signing Secret
 - Let's get the org-wide app management token
   - In two separate terminals:
-    - Start the OAuth token helper: `ts-node auth.js`, it will listen on port 5000 by default
+    - Start the OAuth token helper: `ts-node auth.ts`, it will listen on port 5000 by default
     - Start up your favorite reverse proxy/tunneler, for example: `ngrok http 5000`
   - From your Slack App Config page (https://api.slack.com/apps):
     - On the OAuth & Permssions page, set your Redirect URL to `https://YOUR_UNIQUE_ID.ngrok.io/redirect/oauth`
@@ -23,7 +23,7 @@
       - On the Manage Distribution page, click "Add to Slack"
       - Make sure you are installing to an Organization (and not a Workspace)
       - After clicking "Allow", you will be redirected to a page displaying a token which starts with `xoxp-...`
-    - Stop the two processes you started (`ts-node auth.js` and the reverse proxy/tunnel)
+    - Stop the two processes you started (`ts-node auth.ts` and the reverse proxy/tunnel)
 - Similar to how you set the `SLACK_CLIENT_ID` and other variables above, set `SLACK_USER_TOKEN` in `.env` to the `xoxp-...` token you received in the previous step
 - Set `MONGO_URI` to the full URI (including `mongodb://`) of a Mongo server you have access to
 

@@ -19,7 +19,7 @@ const port = 5000
 authApp.get('/redirect/oauth', function (req, res) {
     const client_id = process.env.SLACK_CLIENT_ID;
     const client_secret = process.env.SLACK_CLIENT_SECRET;
-    const code = req.params["code"];
+    const code = req.query.code;
     const url = `https://slack.com/api/oauth.v2.access?code=${code}&client_id=${client_id}&client_secret=${client_secret}`
     res.redirect(url);
 });
